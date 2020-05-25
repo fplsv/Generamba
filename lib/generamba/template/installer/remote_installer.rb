@@ -24,7 +24,8 @@ module Generamba
         Git.clone(repo_url, template_name, :path => temp_path)
       end
 
-      template_path = "#{template_dir}"
+      template_path = "#{template_dir}/#{template_name}"
+      puts("Path #{template_path}...")
 
       rambaspec_exist = Generamba::RambaspecValidator.validate_spec_existance(template_name, template_path)
       unless rambaspec_exist
